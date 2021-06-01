@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INFX: 35 vote</title>
+<style>
+#sketchImage {
+  width: 1200px; height: 1793px;
+  background-image: url("35 vote.png");
+  background-size: contain;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.link {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalid {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalidExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+#notes {
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: pre-wrap;
+}
+@keyframes fadeValid {
+  from { background-color: orange; }
+  to { background-color: transparent; } 
+}
+@keyframes fadeInvalid {
+  from { background-color: gray; }
+  to { background-color: transparent; } 
+}
+</style>
+</head>
+<body style="margin: 0px">
+<div id="sketchImage" onclick="blinkLinks()">
+</div>
+<a href="31 menu.html">
+  <div
+    class="link";
+    style="left:10px; top:2px; width:94px; height:87px";>
+  </div>
+</a>
+<a href="14 welcome.html">
+  <div
+    class="link";
+    style="left:532px; top:3px; width:66px; height:96px";>
+  </div>
+</a>
+<a href="46 profile.html">
+  <div
+    class="link";
+    style="left:1104px; top:9px; width:73px; height:70px";>
+  </div>
+</a>
+<a href="36 vote top pitch 1.html">
+  <div
+    class="link";
+    style="left:6px; top:131px; width:209px; height:358px";>
+  </div>
+</a>
+<a href="38 vote top pitch 2.html">
+  <div
+    class="link";
+    style="left:253px; top:144px; width:204px; height:362px";>
+  </div>
+</a>
+<a href="39 vote top pitch 3.html">
+  <div
+    class="link";
+    style="left:500px; top:134px; width:239px; height:360px";>
+  </div>
+</a>
+<a href="40 vote top pitch 4.html">
+  <div
+    class="link";
+    style="left:793px; top:135px; width:192px; height:375px";>
+  </div>
+</a>
+<a href="41 vote top pitch 5.html">
+  <div
+    class="link";
+    style="left:1017px; top:130px; width:180px; height:398px";>
+  </div>
+</a>
+<a href="37 random pitch.html">
+  <div
+    class="link";
+    style="left:8px; top:1684px; width:1182px; height:106px";>
+  </div>
+</a>
+<a href="60 thanks for commenting.html">
+  <div
+    class="link";
+    style="left:749px; top:1603px; width:389px; height:66px";>
+  </div>
+</a>
+<div id="notes">
+
+</div>
+</body>
+<script>
+var links = document.querySelectorAll(".link, .linkExternal, .linkInvalid, .linkInvalidExternal");
+function blinkLinks() {
+  var x;
+  for (x of links) {
+    x.addEventListener("animationend", animEnd);
+    if ((x.className == "link") || (x.className == "linkExternal")) {
+      x.style.animation = "fadeValid 1000ms";
+    } else {
+      x.style.animation = "fadeInvalid 1000ms";
+    }
+  }
+}
+function animEnd() { this.style.animation = "" }
+</script>
+</html>

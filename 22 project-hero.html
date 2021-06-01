@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INFX: 22 project-hero</title>
+<style>
+#sketchImage {
+  width: 1200px; height: 1793px;
+  background-image: url("22 project-hero.png");
+  background-size: contain;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.link {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalid {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalidExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+#notes {
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: pre-wrap;
+}
+@keyframes fadeValid {
+  from { background-color: orange; }
+  to { background-color: transparent; } 
+}
+@keyframes fadeInvalid {
+  from { background-color: gray; }
+  to { background-color: transparent; } 
+}
+</style>
+</head>
+<body style="margin: 0px">
+<div id="sketchImage" onclick="blinkLinks()">
+</div>
+<a href="31 menu.html">
+  <div
+    class="link";
+    style="left:6px; top:4px; width:114px; height:94px";>
+  </div>
+</a>
+<a href="46 profile.html">
+  <div
+    class="link";
+    style="left:1070px; top:0px; width:124px; height:76px";>
+  </div>
+</a>
+<a href="javascript:history.back()">
+  <div
+    class="link";
+    style="left:22px; top:1667px; width:464px; height:103px";>
+  </div>
+</a>
+<a href="25 project-hero info edit.html">
+  <div
+    class="link";
+    style="left:485px; top:482px; width:65px; height:85px";>
+  </div>
+</a>
+<a href="26 project-hero pre-production.html">
+  <div
+    class="link";
+    style="left:1089px; top:463px; width:102px; height:124px";>
+  </div>
+</a>
+<a href="27 project-hero production.html">
+  <div
+    class="link";
+    style="left:491px; top:1002px; width:89px; height:93px";>
+  </div>
+</a>
+<a href="29 project-hero release.html">
+  <div
+    class="link";
+    style="left:1074px; top:979px; width:109px; height:116px";>
+  </div>
+</a>
+<a href="29 project-hero release.html">
+  <div
+    class="link";
+    style="left:496px; top:1507px; width:99px; height:106px";>
+  </div>
+</a>
+<a href="14 welcome.html">
+  <div
+    class="link";
+    style="left:505px; top:6px; width:114px; height:93px";>
+  </div>
+</a>
+<div id="notes">
+
+</div>
+</body>
+<script>
+var links = document.querySelectorAll(".link, .linkExternal, .linkInvalid, .linkInvalidExternal");
+function blinkLinks() {
+  var x;
+  for (x of links) {
+    x.addEventListener("animationend", animEnd);
+    if ((x.className == "link") || (x.className == "linkExternal")) {
+      x.style.animation = "fadeValid 1000ms";
+    } else {
+      x.style.animation = "fadeInvalid 1000ms";
+    }
+  }
+}
+function animEnd() { this.style.animation = "" }
+</script>
+</html>

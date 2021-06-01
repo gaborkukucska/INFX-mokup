@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INFX: 31 menu</title>
+<style>
+#sketchImage {
+  width: 1200px; height: 1793px;
+  background-image: url("31 menu.png");
+  background-size: contain;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.link {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalid {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalidExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+#notes {
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: pre-wrap;
+}
+@keyframes fadeValid {
+  from { background-color: orange; }
+  to { background-color: transparent; } 
+}
+@keyframes fadeInvalid {
+  from { background-color: gray; }
+  to { background-color: transparent; } 
+}
+</style>
+</head>
+<body style="margin: 0px">
+<div id="sketchImage" onclick="blinkLinks()">
+</div>
+<a href="javascript:history.back()">
+  <div
+    class="link";
+    style="left:7px; top:9px; width:93px; height:71px";>
+  </div>
+</a>
+<a href="30 watch.html">
+  <div
+    class="link";
+    style="left:83px; top:151px; width:247px; height:239px";>
+  </div>
+</a>
+<a href="44 donate.html">
+  <div
+    class="link";
+    style="left:439px; top:518px; width:260px; height:184px";>
+  </div>
+</a>
+<a href="45 sponsor.html">
+  <div
+    class="link";
+    style="left:835px; top:469px; width:321px; height:229px";>
+  </div>
+</a>
+<a href="46 profile.html">
+  <div
+    class="link";
+    style="left:93px; top:835px; width:257px; height:194px";>
+  </div>
+</a>
+<a href="49 about.html">
+  <div
+    class="link";
+    style="left:871px; top:808px; width:275px; height:234px";>
+  </div>
+</a>
+<a href="33 watch category.html">
+  <div
+    class="link";
+    style="left:126px; top:1137px; width:266px; height:203px";>
+  </div>
+</a>
+<a href="33 watch category.html">
+  <div
+    class="link";
+    style="left:486px; top:1155px; width:262px; height:219px";>
+  </div>
+</a>
+<a href="33 watch category.html">
+  <div
+    class="link";
+    style="left:930px; top:1164px; width:188px; height:192px";>
+  </div>
+</a>
+<a href="33 watch category.html">
+  <div
+    class="link";
+    style="left:156px; top:1448px; width:260px; height:188px";>
+  </div>
+</a>
+<a href="33 watch category.html">
+  <div
+    class="link";
+    style="left:486px; top:1445px; width:256px; height:196px";>
+  </div>
+</a>
+<a href="33 watch category.html">
+  <div
+    class="link";
+    style="left:905px; top:1451px; width:216px; height:201px";>
+  </div>
+</a>
+<a href="20 projects.html">
+  <div
+    class="link";
+    style="left:436px; top:785px; width:313px; height:268px";>
+  </div>
+</a>
+<a href="35 vote.html">
+  <div
+    class="link";
+    style="left:86px; top:484px; width:280px; height:253px";>
+  </div>
+</a>
+<a href="16 share.html">
+  <div
+    class="link";
+    style="left:393px; top:139px; width:340px; height:272px";>
+  </div>
+</a>
+<a href="19 create.html">
+  <div
+    class="link";
+    style="left:835px; top:116px; width:312px; height:273px";>
+  </div>
+</a>
+<div id="notes">
+
+</div>
+</body>
+<script>
+var links = document.querySelectorAll(".link, .linkExternal, .linkInvalid, .linkInvalidExternal");
+function blinkLinks() {
+  var x;
+  for (x of links) {
+    x.addEventListener("animationend", animEnd);
+    if ((x.className == "link") || (x.className == "linkExternal")) {
+      x.style.animation = "fadeValid 1000ms";
+    } else {
+      x.style.animation = "fadeInvalid 1000ms";
+    }
+  }
+}
+function animEnd() { this.style.animation = "" }
+</script>
+</html>

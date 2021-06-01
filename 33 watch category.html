@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INFX: 33 watch category</title>
+<style>
+#sketchImage {
+  width: 1200px; height: 1793px;
+  background-image: url("33 watch category.png");
+  background-size: contain;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.link {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalid {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalidExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+#notes {
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: pre-wrap;
+}
+@keyframes fadeValid {
+  from { background-color: orange; }
+  to { background-color: transparent; } 
+}
+@keyframes fadeInvalid {
+  from { background-color: gray; }
+  to { background-color: transparent; } 
+}
+</style>
+</head>
+<body style="margin: 0px">
+<div id="sketchImage" onclick="blinkLinks()">
+</div>
+<a href="31 menu.html">
+  <div
+    class="link";
+    style="left:13px; top:3px; width:89px; height:94px";>
+  </div>
+</a>
+<a href="14 welcome.html">
+  <div
+    class="link";
+    style="left:518px; top:7px; width:87px; height:92px";>
+  </div>
+</a>
+<a href="46 profile.html">
+  <div
+    class="link";
+    style="left:1099px; top:0px; width:83px; height:99px";>
+  </div>
+</a>
+<a href="34 film page.html">
+  <div
+    class="link";
+    style="left:15px; top:228px; width:170px; height:279px";>
+  </div>
+</a>
+<a href="34 film page.html">
+  <div
+    class="link";
+    style="left:221px; top:229px; width:162px; height:268px";>
+  </div>
+</a>
+<a href="34 film page.html">
+  <div
+    class="link";
+    style="left:416px; top:249px; width:165px; height:254px";>
+  </div>
+</a>
+<a href="34 film page.html">
+  <div
+    class="link";
+    style="left:603px; top:229px; width:154px; height:248px";>
+  </div>
+</a>
+<a href="34 film page.html">
+  <div
+    class="link";
+    style="left:795px; top:233px; width:173px; height:237px";>
+  </div>
+</a>
+<a href="34 film page.html">
+  <div
+    class="link";
+    style="left:1010px; top:237px; width:168px; height:256px";>
+  </div>
+</a>
+<a href="34 film page.html">
+  <div
+    class="link";
+    style="left:23px; top:548px; width:1159px; height:1226px";>
+  </div>
+</a>
+<div id="notes">
+
+</div>
+</body>
+<script>
+var links = document.querySelectorAll(".link, .linkExternal, .linkInvalid, .linkInvalidExternal");
+function blinkLinks() {
+  var x;
+  for (x of links) {
+    x.addEventListener("animationend", animEnd);
+    if ((x.className == "link") || (x.className == "linkExternal")) {
+      x.style.animation = "fadeValid 1000ms";
+    } else {
+      x.style.animation = "fadeInvalid 1000ms";
+    }
+  }
+}
+function animEnd() { this.style.animation = "" }
+</script>
+</html>

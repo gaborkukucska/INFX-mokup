@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INFX: 44 donate</title>
+<style>
+#sketchImage {
+  width: 1200px; height: 1793px;
+  background-image: url("44 donate.png");
+  background-size: contain;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.link {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalid {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalidExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+#notes {
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: pre-wrap;
+}
+@keyframes fadeValid {
+  from { background-color: orange; }
+  to { background-color: transparent; } 
+}
+@keyframes fadeInvalid {
+  from { background-color: gray; }
+  to { background-color: transparent; } 
+}
+</style>
+</head>
+<body style="margin: 0px">
+<div id="sketchImage" onclick="blinkLinks()">
+</div>
+<a href="31 menu.html">
+  <div
+    class="link";
+    style="left:6px; top:1px; width:105px; height:100px";>
+  </div>
+</a>
+<a href="14 welcome.html">
+  <div
+    class="link";
+    style="left:506px; top:5px; width:114px; height:95px";>
+  </div>
+</a>
+<a href="46 profile.html">
+  <div
+    class="link";
+    style="left:1083px; top:7px; width:98px; height:86px";>
+  </div>
+</a>
+<a href="54 donate 5.html">
+  <div
+    class="link";
+    style="left:77px; top:353px; width:245px; height:394px";>
+  </div>
+</a>
+<a href="56 donate 50.html">
+  <div
+    class="link";
+    style="left:397px; top:248px; width:388px; height:599px";>
+  </div>
+</a>
+<a href="55 donate 25.html">
+  <div
+    class="link";
+    style="left:849px; top:315px; width:276px; height:434px";>
+  </div>
+</a>
+<div id="notes">
+
+</div>
+</body>
+<script>
+var links = document.querySelectorAll(".link, .linkExternal, .linkInvalid, .linkInvalidExternal");
+function blinkLinks() {
+  var x;
+  for (x of links) {
+    x.addEventListener("animationend", animEnd);
+    if ((x.className == "link") || (x.className == "linkExternal")) {
+      x.style.animation = "fadeValid 1000ms";
+    } else {
+      x.style.animation = "fadeInvalid 1000ms";
+    }
+  }
+}
+function animEnd() { this.style.animation = "" }
+</script>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INFX: 8 tutorial - 5</title>
+<style>
+#sketchImage {
+  width: 1200px; height: 1793px;
+  background-image: url("8 tutorial - 5.png");
+  background-size: contain;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.link {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalid {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+.linkInvalidExternal {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+#notes {
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: pre-wrap;
+}
+@keyframes fadeValid {
+  from { background-color: orange; }
+  to { background-color: transparent; } 
+}
+@keyframes fadeInvalid {
+  from { background-color: gray; }
+  to { background-color: transparent; } 
+}
+</style>
+</head>
+<body style="margin: 0px">
+<div id="sketchImage" onclick="blinkLinks()">
+</div>
+<a href="14 welcome.html">
+  <div
+    class="link";
+    style="left:422px; top:1631px; width:304px; height:136px";>
+  </div>
+</a>
+<a href="14 welcome.html">
+  <div
+    class="link";
+    style="left:1123px; top:7px; width:74px; height:91px";>
+  </div>
+</a>
+<a href="4 tutorial - 1.html">
+  <div
+    class="link";
+    style="left:192px; top:1514px; width:70px; height:100px";>
+  </div>
+</a>
+<a href="5 tutorial - 2.html">
+  <div
+    class="link";
+    style="left:263px; top:1517px; width:78px; height:92px";>
+  </div>
+</a>
+<a href="6 tutorial - 3.html">
+  <div
+    class="link";
+    style="left:341px; top:1515px; width:72px; height:101px";>
+  </div>
+</a>
+<a href="7 tutorial - 4.html">
+  <div
+    class="link";
+    style="left:405px; top:1512px; width:78px; height:104px";>
+  </div>
+</a>
+<a href="9 tutorial - 6.html">
+  <div
+    class="link";
+    style="left:562px; top:1520px; width:69px; height:89px";>
+  </div>
+</a>
+<a href="10 tutorial - 7.html">
+  <div
+    class="link";
+    style="left:636px; top:1517px; width:86px; height:96px";>
+  </div>
+</a>
+<a href="11 tutorial - 8.html">
+  <div
+    class="link";
+    style="left:724px; top:1520px; width:64px; height:90px";>
+  </div>
+</a>
+<a href="12 tutorial - 9.html">
+  <div
+    class="link";
+    style="left:790px; top:1518px; width:87px; height:108px";>
+  </div>
+</a>
+<a href="13 tutorial - 10.html">
+  <div
+    class="link";
+    style="left:882px; top:1527px; width:101px; height:107px";>
+  </div>
+</a>
+<div id="notes">
+
+</div>
+</body>
+<script>
+var links = document.querySelectorAll(".link, .linkExternal, .linkInvalid, .linkInvalidExternal");
+function blinkLinks() {
+  var x;
+  for (x of links) {
+    x.addEventListener("animationend", animEnd);
+    if ((x.className == "link") || (x.className == "linkExternal")) {
+      x.style.animation = "fadeValid 1000ms";
+    } else {
+      x.style.animation = "fadeInvalid 1000ms";
+    }
+  }
+}
+function animEnd() { this.style.animation = "" }
+</script>
+</html>
